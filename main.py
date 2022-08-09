@@ -54,12 +54,12 @@ pygame.init()
 max = 5
 winWidth, winHeight = 256, 256
 count = 0
+model = models.load_model("model2.h5")
+pic = cv2.VideoCapture(0)
+results = []
 window = pygame.display.set_mode((winWidth, winHeight))
 pygame.display.set_caption('Facemask Detection')
 pygame.display.flip()
-model = models.load_model("model4.h5")
-pic = cv2.VideoCapture(0)
-results = []
 
 
 run = True
