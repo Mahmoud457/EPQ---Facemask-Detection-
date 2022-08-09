@@ -52,7 +52,7 @@ pygame.init()
 
 
 max = 5
-winWidth, winHeight = 224, 224
+winWidth, winHeight = 256, 256
 count = 0
 window = pygame.display.set_mode((winWidth, winHeight))
 pygame.display.set_caption('Facemask Detection')
