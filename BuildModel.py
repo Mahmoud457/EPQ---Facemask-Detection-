@@ -55,7 +55,7 @@ model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 
-for i in range(0, 10):
+for i in range(0, 33):
   
   data, labels = createBatch(i)
  
