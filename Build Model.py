@@ -63,7 +63,7 @@ top = layers.AveragePooling2D(pool_size=(7, 7))(top)
 top = layers.Flatten(name="flatten")(top)
 top = layers.Dense(128, activation="relu")(top)
 top = layers.Dropout(0.5)(top)
-top = layers.Dense(2, activation="softmax")(top)
+top = layers.Dense(2, activation="sigmoid")(top)
 
 model = models.Model(inputs=base.input, outputs=top)
 
