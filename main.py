@@ -17,21 +17,21 @@ def grabImage():
     if not pic.isOpened():
         raise IOError("Cannot open webcam")
     ret, image = pic.read()
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) 
     return image
 def formatImage(image):
     img = Image.fromarray(image).resize((winWidth, winHeight))
     return np.array(img)
 
 def displayImage(image):
-    raw = image.tobytes()
+    raw = image.tobytes() #Converts to datatype readable by Pygame
     surface = pygame.image.frombuffer(raw, image.shape[:2], "RGB")
     window.blit(surface, (0,0))
 
 def Predict(image):
     prediction = model.predict(image)
     print(prediction)
-    return categories[np.argmax(prediction)]
+    return categories[np.argmax(prediction)] #takes a number of predictions and only shows one with highest probability 
 def Check(res):
     if np.all(res == res[0]):
         return True
